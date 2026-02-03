@@ -1,0 +1,105 @@
+Unit 3 – Class Creation 
+Unit Coding Project 
+Hangman 
+You will be creating a program that plays the classic game of  
+Hangman. This project will reinforce your understanding of  
+object-oriented programming principles, including class  
+creation, static methods, and program design decisions. 
+1. Program Design 
+Before you start coding, you will be designing your program using objects and methods. The questions and  tasks in this section are designed to help you think about your program design. You will type your responses to  these questions in a Google Doc BEFORE you start your program code. You are welcome to go back and  change the answers as you develop your program. 
+2. Program Code 
+Word Selection: Before the game begins, the computer should randomly choose a word for the player to guess  from a predefined list of at least 10 words. 
+Gameplay: 
+• Display the mystery word as a series of asterisks ("*") initially 
+• Allow the player to enter a single letter at a time (assume the user will always enter in correct values, for  example, if you want a capital letter, they will always enter in a capital letter) 
+• If the letter is in the mystery word, reveal all occurrences of that letter 
+• If the letter is not in the word, deduct one guess from the player's total (starting with 5 guesses) • The player wins if they correctly guess the entire word before running out of guesses 
+Game Display: 
+• Continuously update and display the mystery word, guesses left, and letters guessed after each input • End the game with a win message if the player guesses the word correctly 
+• End the game with a loss message and reveal the mystery word if the player runs out of guesses 
+Requirements: 
+• You must utilize at least one class to represent aspects of the game (Game, Word, Player, etc.) • The class must have at least one instance variable, one constructor, one accessor or mutator, and at least  one "special" method that is called in the program execution 
+• You must implement at least one static method to manage game-related functionality (selecting the  word, handling the number of guesses, checking if the game is over, etc.). 
+Sample Run:
+Welcome to Hangman! You have to guess the mystery word in 5 guesses or less. 
+Mystery Word: ******** 
+Guesses Left: 5 
+Letters Guessed: 
+Enter a letter: A 
+INCORRECT 
+Mystery Word: ******** 
+Guesses Left: 4 
+Letters Guessed: A 
+Enter a letter: C 
+CORRECT! 
+Mystery Word: C******* 
+Guesses Left: 4 
+Letters Guessed: A C 
+Enter a letter: R 
+CORRECT!!! 
+Mystery Word: C******R 
+Guesses Left: 4 
+Letters Guessed: A C R 
+Enter a letter: X 
+INCORRECT 
+Mystery Word: C******R 
+Guesses Left: 3 
+Letters Guessed: A C R X 
+Enter a letter:  
+Program continues…. 
+3. Reflection Questions 
+Answer the reflection questions after your program is complete. 
+4. Submission 
+Type your responses to sections 1 and 3 in the Google Doc, using the template provided with the assignment. Create your code in our IDE, and attach the URL of the program in the assignment as well.
+Unit 3 Coding Project 
+1. Program Design Questions 
+1) What is your object creating class going to be? What instance variable(s) will this class have? 
+My object creating classes will be one for word, one for players, and one for the Hangman Game in general. 
+
+The word class will have the instance variables:
+answerWord: String
+UserGuessedWord: String
+And lettersGuessed - String
+
+The player class will have the instance variables:
+guessesLeft - int 
+2) What will your default constructor do? 
+For the word class the default constructor will pick a random word for the answerWord, 
+And set UserGuessedWord to the length of the word in asterisks. 
+
+
+For the player class, the default constructor will have guessesLeft as 5.
+3) Do you need a parameter constructor? Why or why not? 
+For the word class, I can create a parameter constructor that sets answerWord to the parameter entered.
+4) Does your object need accessor and/or mutator methods? Which ones need them and why? 
+
+Word Class:
+
+Assessors:
+-getAnswerWord(): To get the word that needs to be guessed
+-getUserGuessedWord(): to get the current masked version of the word.
+
+Mutator:
+revealLetter(): Updates UserGuessedWord by showing guessed letters instead of the *.
+
+
+PlayerClass:
+
+
+Accessors: 
+-getGuessesLeft(): Gets guesses left
+-getLettersGuessed(): So game can show the letters that are currently guessed 
+Mutator:
+decreaseGuess(): lowers guessesLeft by 1 whenever the player guesses incorrectly.
+addLetterGuess(): Adds a letter to the player’s guessed list after every input.
+
+5) List the "special" methods for the object you think you will need, and briefly describe how you will use them  in your program. 
+The word class will include the method, isWordComplete() that checks if the user has fully completed the word or not. I would use this to check if the game has ended or not.
+6) Create a UML diagram for the class you described above. 
+<Type Response Here> 
+7) What static method will you be creating and how will it be used in your program 
+The status method I will be creating is called selectRandomWord(), this will choose a random word from a predefined list of at least 10 words at the start of the game, this method would be part of the WordClass.
+3. Reflection Questions 
+1) What were the most challenging aspects of designing and implementing your Hangman game? <Type Response Here> 
+2) How did you decide on the structure of your classes and methods for this project? <Type Response Here> 
+3) If you were to extend this project further, what additional features or improvements would you consider? <Type Response Here>
